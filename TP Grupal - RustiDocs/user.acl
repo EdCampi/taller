@@ -1,0 +1,17 @@
+user super >1234 *
+
+user admin >admin +GET +SET +DEL +PING +INFO +FLUSHALL +MEET
+
+user lector >lectura +GET +EXISTS +PING
+
+user pubsub >pubsub *
+
+user agustinefe >123 *
+user martoxdlol >123 *
+
+user manuel >123 *
+user erica >123 *
+user franco >123 *
+user matias >123 * 
+
+user nada >123 +GET +PING +EXISTS +SUBSCRIBE +PSUBSCRIBE +PUBLISH +PUBSUB +KEYS +SCAN

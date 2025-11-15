@@ -1,0 +1,74 @@
+# Configuración para Tests de Integración
+# Este archivo contiene configuraciones que pueden ser usadas por los tests
+
+[server]
+# Configuración del servidor de test
+port = 6379
+host = "0.0.0.0"
+timeout_seconds = 30
+
+[cluster]
+# Configuración para tests de cluster
+ports = [6380, 6381, 6382]
+node_count = 3
+
+[storage]
+# Configuración de almacenamiento
+dump_file = "dump.rdb"
+aof_file = "appendonly.aof"
+temp_dir = "test_temp"
+
+[pubsub]
+# Configuración para tests de Pub/Sub
+max_channels = 1000
+max_subscribers_per_channel = 100
+message_timeout_ms = 5000
+
+[performance]
+# Configuración para tests de rendimiento
+operations_per_test = 1000
+concurrent_clients = 10
+stress_test_duration_seconds = 60
+
+[network]
+# Configuración de red
+connection_timeout_ms = 5000
+read_timeout_ms = 3000
+write_timeout_ms = 3000
+
+[logging]
+# Configuración de logging
+level = "info"
+file = "test.log"
+max_file_size_mb = 10
+max_files = 5
+
+[test_suites]
+# Configuración de suites de test
+protocol_tests = true
+command_tests = true
+persistence_tests = true
+pubsub_tests = true
+performance_tests = true
+stress_tests = false  # Deshabilitado por defecto por ser lento
+
+[data_types]
+# Configuración de tipos de datos para testing
+string_max_length = 10000
+list_max_items = 1000
+set_max_members = 1000
+hash_max_fields = 100
+
+[edge_cases]
+# Configuración para tests de casos edge
+test_empty_keys = true
+test_special_characters = true
+test_unicode_strings = true
+test_large_data = true
+test_corrupted_files = true
+
+[cleanup]
+# Configuración de limpieza
+cleanup_temp_files = true
+cleanup_logs = true
+cleanup_dumps = true 

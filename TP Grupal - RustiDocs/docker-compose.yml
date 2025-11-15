@@ -1,0 +1,171 @@
+networks:
+  redis-cluster:
+    driver: bridge
+
+volumes:
+  node_1_data:
+  node_2_data:
+  node_3_data:
+  node_4_data:
+  node_5_data:
+  node_6_data:
+  node_7_data:
+  node_8_data:
+  node_9_data:
+
+services:
+  # Nodos Redis Cluster
+  node_1:
+    build: .
+    image: rustidocs-llm
+    container_name: node_1
+    command: ["sh", "-c", "./node ./utils/nodes/node_1/node_1.conf"]
+    ports:
+      - "7001:7001"
+    volumes:
+      - node_1_data:/app/utils/nodes/node_1
+    restart: unless-stopped
+    network_mode: "host"
+
+  node_2:
+    image: rustidocs-llm
+    container_name: node_2
+    command: ["sh", "-c", "sleep 5 && ./node ./utils/nodes/node_2/node_2.conf 0.0.0.0:7001"]
+    ports:
+      - "7002:7002"
+    volumes:
+      - node_2_data:/app/utils/nodes/node_2
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_1:
+        condition: service_started
+
+  node_3:
+    image: rustidocs-llm
+    container_name: node_3
+    command: ["sh", "-c", "sleep 10 && ./node ./utils/nodes/node_3/node_3.conf 0.0.0.0:7002"]
+    ports:
+      - "7003:7003"
+    volumes:
+      - node_3_data:/app/utils/nodes/node_3
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_2:
+        condition: service_started
+
+  node_4:
+    image: rustidocs-llm
+    container_name: node_4
+    command: ["sh", "-c", "sleep 15 && ./node ./utils/nodes/node_4/node_4.conf 0.0.0.0:7003"]
+    ports:
+      - "7004:7004"
+    volumes:
+      - node_4_data:/app/data/node_4
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_3:
+        condition: service_started
+
+  node_5:
+    image: rustidocs-llm
+    container_name: node_5
+    command: ["sh", "-c", "sleep 20 && ./node ./utils/nodes/node_5/node_5.conf 0.0.0.0:7004"]
+    ports:
+      - "7005:7005"
+    volumes:
+      - node_5_data:/app/utils/nodes/node_5
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_4:
+        condition: service_started
+
+  node_6:
+    image: rustidocs-llm
+    container_name: node_6
+    command: ["sh", "-c", "sleep 25 && ./node ./utils/nodes/node_6/node_6.conf 0.0.0.0:7005"]
+    ports:
+      - "7006:7006"
+    volumes:
+      - node_6_data:/app/utils/nodes/node_6
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_5:
+        condition: service_started
+
+  node_7:
+    image: rustidocs-llm
+    container_name: node_7
+    command: ["sh", "-c", "sleep 30 && ./node ./utils/nodes/node_7/node_7.conf 0.0.0.0:7006"]
+    ports:
+      - "7007:7007"
+    volumes:
+      - node_7_data:/app/utils/nodes/node_7
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_6:
+        condition: service_started
+
+  node_8:
+    image: rustidocs-llm
+    container_name: node_8
+    command: ["sh", "-c", "sleep 35 && ./node ./utils/nodes/node_8/node_8.conf 0.0.0.0:7007"]
+    ports:
+      - "7008:7008"
+    volumes:
+      - node_8_data:/app/utils/nodes/node_8
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_7:
+        condition: service_started
+
+  node_9:
+    image: rustidocs-llm
+    container_name: node_9
+    command: ["sh", "-c", "sleep 40 && ./node ./utils/nodes/node_9/node_9.conf 0.0.0.0:7008"]
+    ports:
+      - "7009:7009"
+    volumes:
+      - node_9_data:/app/utils/nodes/node_9
+    restart: unless-stopped
+    network_mode: "host"
+    depends_on:
+      node_8:
+        condition: service_started
+
+  # Microservicio LLM
+  llm_service:
+    image: rustidocs-llm
+    container_name: llm_service
+    command: ["sh", "-c", "sleep 50 && ./llm_service 0.0.0.0:7001 ${GEMINI_API_KEY}"]
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DOCKER_MODE=true
+    ports:
+      - "8080:8080"  # Puerto para la API del LLM service
+    network_mode: "host"
+    depends_on:
+      node_9:
+        condition: service_started
+    restart: unless-stopped
+
+  # Microservicio de documentos
+  microservice:
+    image: rustidocs-llm
+    container_name: microservice
+    command: ["sh", "-c", "sleep 55 && ./microservice_docker 0.0.0.0:7001"]
+    environment:
+      - DOCKER_MODE=true
+    ports:
+      - "8081:8081"  # Puerto para la API del microservice
+    network_mode: "host"
+    depends_on:
+      llm_service:
+        condition: service_started
+    restart: unless-stopped

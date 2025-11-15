@@ -1,0 +1,33 @@
+[package]
+name = "rustidocs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = { version = "0.22.0", features = ["glow"] }
+chrono = "0.4.41"
+rand = "0.8.5"
+rfd = "0.14"
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.0", features = ["v4"] }
+winapi = { version = "0.3", features = ["winuser"] }
+
+[dev-dependencies]
+tempfile = "3.8"
+
+[[bin]]
+name = "node" # Nombre del binario
+
+[[bin]]
+name = "interfaz"
+
+[[bin]]
+name = "llm_service"
+
+[[bin]]
+name = "microservice"
+
+[[bin]]
+name = "microservice_docker"

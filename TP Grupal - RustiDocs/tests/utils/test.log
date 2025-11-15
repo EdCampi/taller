@@ -1,0 +1,64 @@
+157836:M 30 Jun 2025 02:58:18.668 * AOF Logger started
+158516:M 30 Jun 2025 03:00:25.574 * AOF Logger started
+158516:M 30 Jun 2025 03:00:26.820 * Client AA000 disconnected
+159130:M 30 Jun 2025 03:02:10.128 * AOF Logger started
+159130:M 30 Jun 2025 03:02:15.344 * Client AA000 disconnected
+159693:M 30 Jun 2025 03:02:36.694 * AOF Logger started
+159747:M 30 Jun 2025 03:03:28.225 * AOF Logger started
+160445:M 30 Jun 2025 03:04:34.522 * AOF Logger started
+161344:M 30 Jun 2025 03:06:12.568 * AOF Logger started
+162663:M 30 Jun 2025 03:07:21.735 * AOF Logger started
+162863:M 30 Jun 2025 03:08:51.889 * AOF Logger started
+163981:M 30 Jun 2025 03:11:48.532 * AOF Logger started
+163981:M 30 Jun 2025 03:11:48.533 * Client AA000 disconnected
+164807:M 30 Jun 2025 03:12:46.443 * AOF Logger started
+164807:M 30 Jun 2025 03:12:47.696 * Client AA000 disconnected
+165345:M 30 Jun 2025 03:13:11.863 * AOF Logger started
+166082:M 30 Jun 2025 03:13:36.942 * AOF Logger started
+166115:M 30 Jun 2025 03:13:41.196 * AOF Logger started
+166115:M 30 Jun 2025 03:13:41.196 * AOF Logger started
+166115:M 30 Jun 2025 03:13:41.198 * Client AA000 disconnected
+167947:M 30 Jun 2025 03:17:52.555 * AOF Logger started
+167947:M 30 Jun 2025 03:17:52.556 * AOF Logger started
+167947:M 30 Jun 2025 03:17:52.559 * Client AA000 disconnected
+5931:M 30 Jun 2025 03:40:49.024 * AOF Logger started
+5931:M 30 Jun 2025 03:40:49.026 * AOF Logger started
+5931:M 30 Jun 2025 03:40:49.027 * Client AA000 disconnected
+7413:M 30 Jun 2025 03:43:07.833 * AOF Logger started
+7413:M 30 Jun 2025 03:43:07.841 * AOF Logger started
+7413:M 30 Jun 2025 03:43:07.846 * Client AA000 disconnected
+10090:M 30 Jun 2025 03:44:04.295 * AOF Logger started
+10090:M 30 Jun 2025 03:44:04.296 * AOF Logger started
+10090:M 30 Jun 2025 03:44:04.297 * Client AA000 disconnected
+12929:M 30 Jun 2025 03:44:57.211 * AOF Logger started
+12929:M 30 Jun 2025 03:44:57.212 * AOF Logger started
+12929:M 30 Jun 2025 03:44:57.213 * Client AA000 disconnected
+12929:M 30 Jun 2025 03:44:57.219 * AOF Logger started
+15698:M 30 Jun 2025 03:45:56.535 * AOF Logger started
+15698:M 30 Jun 2025 03:45:56.537 * AOF Logger started
+15698:M 30 Jun 2025 03:45:56.538 * Client AA000 disconnected
+18515:M 30 Jun 2025 03:50:02.835 * AOF Logger started
+18515:M 30 Jun 2025 03:50:02.839 * AOF Logger started
+18515:M 30 Jun 2025 03:50:02.840 * Client AA000 disconnected
+18515:M 30 Jun 2025 03:50:02.840 * AOF Logger started
+18515:M 30 Jun 2025 03:50:02.840 * Server listening on 127.0.0.1:9879
+18515:M 30 Jun 2025 03:50:03.144 - Accepted 127.0.0.1:49172 connected, ID AAA000
+18515:M 30 Jun 2025 03:50:03.144 * Detectada conexión TCP normal
+18515:M 30 Jun 2025 03:50:03.144 * Client AAA000 disconnected
+22646:M 30 Jun 2025 03:55:15.872 * AOF Logger started
+22646:M 30 Jun 2025 03:55:15.878 * Server listening on 127.0.0.1:12346
+22646:M 30 Jun 2025 03:55:16.171 * Detectada conexión TCP normal
+22646:M 30 Jun 2025 03:55:16.172 * Client AAA000 disconnected
+25120:M 30 Jun 2025 04:06:01.359 * AOF Logger started
+27047:M 30 Jun 2025 04:07:45.439 * AOF Logger started
+27047:M 30 Jun 2025 04:07:45.440 * Client AA000 disconnected
+27047:M 30 Jun 2025 04:07:45.439 * AOF Logger started
+18966:M 01 Jul 2025 21:05:07.359 * AOF Logger started
+18966:M 01 Jul 2025 21:05:07.360 * Client AA000 disconnected
+18966:M 01 Jul 2025 21:05:07.360 * AOF Logger started
+21730:M 01 Jul 2025 21:06:43.493 * AOF Logger started
+21730:M 01 Jul 2025 21:06:43.494 * AOF Logger started
+21730:M 01 Jul 2025 21:06:43.498 * Client AA000 disconnected
+80073:M 03 Jul 2025 19:43:46.307 * AOF Logger started
+80073:M 03 Jul 2025 19:43:46.308 * Client AA000 disconnected
+80073:M 03 Jul 2025 19:43:46.308 * AOF Logger started
