@@ -36,7 +36,7 @@ docker build -t rustidocs-llm .
 
 ## ¿Cómo ejecutar?
 
-### 🐳 **Ejecución con Docker (RECOMENDADO)**
+### 🐳 **Ejecución con Docker**
 
 #### Inicio rápido - Usar el sistema completo
 ```sh
@@ -81,9 +81,9 @@ docker-compose down -v
 - ✅ **Direccionamiento inteligente**: El sistema usa las IPs correctas según el contexto
 - ✅ **Healthchecks**: Los containers esperan a que Redis esté listo antes de iniciar
 
-### Ejecución local (desarrollo)
+### Ejecución local
 
-#### Nodos de base de datos (Redis Cluster)
+#### Nodos de base de datos
 
 ##### Iniciar nodo:
 
