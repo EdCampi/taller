@@ -1,7 +1,6 @@
 # Taller de Programación - Grupo X
 
-**Consigna:**  
-[RustiDocs - 1C 25](https://taller-1-fiuba-rust.github.io/proyecto/25C1/proyecto.html)
+**Consigna:**  [RustiDocs - 1C 25](https://taller-1-fiuba-rust.github.io/proyecto/25C1/proyecto.html)
 
 Este proyecto implementa una aplicación de edición de documentos colaborativa y una base de datos tipo Redis Cluster, permitiendo almacenamiento distribuido, persistencia y operaciones concurrentes.
 
